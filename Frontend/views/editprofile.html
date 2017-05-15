@@ -1,0 +1,75 @@
+<div class="middlePage container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <form class="form-horizontal">
+                <fieldset>
+
+                    <div class="spacing">
+                        <div class="title col-md-3">
+                            <p>First Name: </p>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="fname" type="text" ng-model="vm.fname" required autocomplete="off"
+                                   class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <div class="spacing">
+                        <div class="title col-md-3">
+                            <p>Last Name: </p>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="lname" type="text" ng-model="vm.lname"
+                                   class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <div class="spacing">
+                        <div class="title col-md-3">
+                            <p>Email Address: </p>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="email" type="text" ng-model="vm.email" autocomplete="off"
+                                   class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <div class="spacing">
+                        <div class="title col-md-3">
+                            <p>Password: </p>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="pwd" type="password" ng-model="vm.pwd"
+                                   class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <div class="spacing">
+                        <div class="title col-md-3">
+                            <p>Confirm Password: </p>
+                        </div>
+                        <div class="col-md-9">
+                            <input id="cpwd" type="password" ng-model="vm.cpwd"
+                                   class="form-control input-md"/>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <div class="spacing">
+                        <div class="col-md-offset-8 col-md-4">
+                            <button id="update"
+                                    class="btn btn-success col-md-offset-1"
+                                    ng-click="vm.update()">Update</button>
+                            <button id="cancel"
+                                    class="col-md-offset-1 btn btn-danger"
+                                    ng-click="vm.cancel()">Cancel</button>
+                        </div>
+                        <!--</div>-->
+
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</div>

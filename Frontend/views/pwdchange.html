@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading"><legend><i class="ion-clipboard"></i> Change Password</legend></div>
+        <div class="panel-body">
+
+            <form method="post" ng-submit="changePassword()" name="changeForm">
+
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : changeForm.oldpwd.$invalid && changeForm.oldpwd.$dirty }">
+                    <input class="form-control input-lg" type="password" name="oldpwd" ng-model="user.oldpwd" placeholder="Old  Password" required>
+                    <span class="ion-key form-control-feedback"></span>
+                    <div class="help-block text-danger" ng-if="changeForm.oldpwd.$dirty" ng-messages="changeForm.oldpwd.$error">
+                        <div ng-message="required">Password is required.</div>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : changeForm.newpwd.$invalid && changeForm.newpwd.$dirty }">
+                    <input password-strength class="form-control input-lg" type="password" name="newpwd" ng-model="user.newpwd" placeholder="New Password" required>
+                    <span class="ion-key form-control-feedback"></span>
+                    <div class="help-block text-danger" ng-if="changeForm.newpwd.$dirty" ng-messages="changeForm.newpwd.$error">
+                        <div ng-message="required">Password is required.</div>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback" ng-class="{ 'has-error' : changeForm.cnewpwd.$invalid && changeForm.cnewpwd.$dirty }">
+                    <input class="form-control input-lg" type="password" name="cnewpwd" ng-model="user.cnewpwd" placeholder="Confirm New Password" required ng-change="validate()">
+                    <span class="ion-key form-control-feedback"></span>
+                    <div class="help-block text-danger" ng-if="changeForm.cnewpwd.$dirty" ng-messages="changeForm.cnewpwd.$error">
+                        <div ng-message="required">Password is required.</div>
+                        <div ng-message="notsame">Both Passwords are not same</div>
+                    </div>
+                </div>
+                <button class="btn btn-lg btn-success" ng-disabled="changeForm.$invalid">Update Information</button>
+            </form>
+        </div>
+    </div>
+</div>

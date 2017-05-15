@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <legend><i class="ion-clipboard"></i> {{title}}</legend>
+            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+                <tr ng-repeat="row in $data">
+                    <td data-title="'Posted By'" filter="{displayName: 'text'}" sortable="'displayName'">{{row.displayName}}</td>
+                    <td data-title="'Title'" filter="{title: 'text'}" sortable="'title'">{{row.title}}</td>
+                    <td data-title="'Quantity'" filter="{quantity: 'number'}" sortable="'quantity'">{{row.quantity}}</td>
+                    <td data-title="'Price'" filter="{price: 'number'}" sortable="'price'">{{row.price}}</td>
+                    <td data-title="'No of Bids'" sortable="'bids.length'">{{row.bids.length}}</td>
+                    <td data-title="'Created'" sortable="'createdAt'">{{convert(row.createdAt)}}</td>
+                    <td><button class="btn btn-primary" ng-click="view(row)">View</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

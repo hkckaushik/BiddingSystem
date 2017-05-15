@@ -1,0 +1,52 @@
+<div id="homebody">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/"><i class="ion-ios7-pulse-strong"></i>Interlace</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/user/search">Search</a></li>
+                    <li><a href="#/">Post</a></li>
+                </ul>
+                <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right">
+            <li>
+                <a class="popovers" role="button" data-toggle="popover" title="" data-container="body"
+                   data-placement="bottom" data-html="true"
+                   data-content="{{loginTemplate}}" ng-mouseenter="openPopover()" ng-mouseleave="closePopover()">Last
+                    Login Info</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/user/myposts">My Posts</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#/user/profile">Edit</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#/logout">Logout</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <!--<a href="#" ><ngcart-summary></ngcart-summary></a>-->
+                <a style="padding: 5px 0 0 0;" href="#/user/cart">
+                    <ngcart-summary class="ng-isolate-scope">
+                    </ngcart-summary>
+                </a>
+            </li>
+
+        </ul>
+            </div>
+        </div>
+    </nav>
+    <div ui-view="">
+    </div>
+</div>
