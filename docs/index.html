@@ -170,7 +170,14 @@ table[class=hide], img[class=hide], td[class=hide] {
 	<![endif]-->
 <script>
 document.addEventListener("DOMContentLoaded", function(event) { 
-	document.getElementById('ownerName').innerHTML = 'Chris'
+	var decodedURI = decodeURIComponent(window.location.search.replace(/\+/g, ' '))
+	var regex = /[^&?]*?=[^&?]*/g
+	var matches = decodedURI.match(regex)
+	matches.forEach((match)=>{
+		const [id,value] = match.split('=')
+		const element = document.getElementById(id)
+		if (element) element.innerHTML = value
+	})
 });
 	
 </script>
@@ -199,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                       <div>
                         <p style="color:#22aadc; font-size:30px; font-weight: bold; text-align:left; text-transform:uppercase; font-family: Verdana, Geneva, sans-serif">Water Quality Test Results</p>
                         <p style="color:#22aadc;font-size:16px; font-weight:bold; text-align:left; font-family: Verdana, Geneva, sans-serif; line-height:22px; letter-spacing: .1em; width: 70%;float:left;">
-			      <span id='ownerName'>%OwnerName%</span>
+			      <span id='OwnerName'>%OwnerName%</span>
 				<br /> Here are your resent test results from your in home water test.<br /> Please find your results below.</p>
                         <!-- START BUTTON -->
 
@@ -271,11 +278,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                 <tr>
                                   <td align="center" valign="middle" style="padding-top:30px; padding-right:10px"><p style="font-size:26px; text-decoration:none; color:#262626; font-family: Verdana, Geneva, sans-serif; text-align:left"><strong>What's in your water:</strong></p>
                                     <p style="font-size:14px; text-decoration:none; color:#3a3d41; font-family: Verdana, Geneva, sans-serif; text-align:left; line-height:22px">
-                                      <span class="date">Tested on : %TestedOn%</span><br />
-                                      Hardness Level <span class="orange">%HardnessLevel%</span><br />
-                                      <span class="test-results">Chlorine levels <span class="orange">%ChlorineLevels%</span><br />
-                                      Nitrates <span class="orange">%Nitrates%</span><br />
-                                      Bromine  <span class="orange">%Bromine%</span><br />
+                                      <span class="date">Tested on : <span id="TestedOn">%TestedOn%</span></span><br />
+                                      Hardness Level <span class="orange" id="HardnessLevel">%HardnessLevel%</span><br />
+                                      <span class="test-results">Chlorine levels <span class="orange" id="ChlorineLevels">%ChlorineLevels%</span><br />
+                                      Nitrates <span class="orange" id="Nitrates>%Nitrates%</span><br />
+                                      Bromine  <span class="orange" id="Bromine>%Bromine%</span><br />
                                       Arsenic none detected</p></td>
                                 </tr>
                               </table></td>
