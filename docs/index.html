@@ -169,7 +169,10 @@ table[class=hide], img[class=hide], td[class=hide] {
 	</style>
 	<![endif]-->
 <script>
+document.addEventListener("DOMContentLoaded", function(event) { 
 	document.getElementById('ownerName').innerHTML = 'Chris'
+});
+	
 </script>
 </head>
 
@@ -196,7 +199,7 @@ table[class=hide], img[class=hide], td[class=hide] {
                       <div>
                         <p style="color:#22aadc; font-size:30px; font-weight: bold; text-align:left; text-transform:uppercase; font-family: Verdana, Geneva, sans-serif">Water Quality Test Results</p>
                         <p style="color:#22aadc;font-size:16px; font-weight:bold; text-align:left; font-family: Verdana, Geneva, sans-serif; line-height:22px; letter-spacing: .1em; width: 70%;float:left;">
-			      <p id='ownerName'>%OwnerName%</p>
+			      <span id='ownerName'>%OwnerName%</span>
 				<br /> Here are your resent test results from your in home water test.<br /> Please find your results below.</p>
                         <!-- START BUTTON -->
 
