@@ -9,6 +9,8 @@
 <meta property="og:title"              content="Water Test Results"/>
 <meta property="og:description"        content="How much does culture influence creative thinking?" />
 <meta property="og:image"              content="https://www.crystalclearconcept.com/wp-content/uploads/2018/05/clean-water.png" />
+<meta property="fb:app_id"             content="275443799859443" />
+<meta property="og:url"                content="https://hkckaushik.github.io/BiddingSystem/" />
 <meta property="og:OwnerName"   content="Chris" /> 
 <title></title>
 <style type="text/css">
@@ -167,10 +169,7 @@ table[class=hide], img[class=hide], td[class=hide] {
 	</style>
 	<![endif]-->
 <script>
-  var m = document.createElement('meta');
-    m.setAttribute('property','og:url');
-    m.content = window.location.href;
-    document.head.appendChild(m);
+	document.getElementById('ownerName').innerHTML = 'Chris'
 </script>
 </head>
 
@@ -196,7 +195,9 @@ table[class=hide], img[class=hide], td[class=hide] {
                   <tr>
                       <div>
                         <p style="color:#22aadc; font-size:30px; font-weight: bold; text-align:left; text-transform:uppercase; font-family: Verdana, Geneva, sans-serif">Water Quality Test Results</p>
-                        <p style="color:#22aadc;font-size:16px; font-weight:bold; text-align:left; font-family: Verdana, Geneva, sans-serif; line-height:22px; letter-spacing: .1em; width: 70%;float:left;">%OwnerName%<br /> Here are your resent test results from your in home water test.<br /> Please find your results below.</p>
+                        <p style="color:#22aadc;font-size:16px; font-weight:bold; text-align:left; font-family: Verdana, Geneva, sans-serif; line-height:22px; letter-spacing: .1em; width: 70%;float:left;">
+			      <p id='ownerName'>%OwnerName%</p>
+				<br /> Here are your resent test results from your in home water test.<br /> Please find your results below.</p>
                         <!-- START BUTTON -->
 
                         <center>
